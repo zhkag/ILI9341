@@ -24,10 +24,10 @@ RT-Thread online packages  --->
         (240) Width of the LCD display
         (320) Height of the LCD display
         (-1) DC pin connected to the LCD display
-		(-1) RESET pin connected to the LCD display
-		(-1) CS pin connected to the LCD display
-		(-1) Backlight pin connected to the LCD display
-        	Version (latest)  --->
+	(-1) RESET pin connected to the LCD display
+	(-1) CS pin connected to the LCD display
+	(-1) Backlight pin connected to the LCD display
+		Version (latest)  --->
 ```
 
 **spi bus name**：连接 LCD 所使用的 SPI 总线名称
