@@ -269,8 +269,17 @@ static void _ili9341_init(void)
     LCD_WR_REG(0x29);
 }
 
+static void Lcd_pin_init(void)
+{
+    rt_pin_mode(PKG_ILI_9341_DC_PIN, PIN_MODE_OUTPUT);
+    rt_pin_mode(PKG_ILI_9341_RES_PIN, PIN_MODE_OUTPUT);
+    rt_pin_mode(PKG_ILI_9341_BLK_PIN, PIN_MODE_OUTPUT);
+}
+
 static void LCD_Init(void)
 {
+    Lcd_pin_init();
+
     LCD_RESET();        /* LCD Hardware Reset */
     LCD_WR_REG(0x11);   /* Sleep out */
     DELAY(120);         /* Delay 120ms */
@@ -347,5 +356,5 @@ static int lcd_spi_test(void)
 
     return RT_EOK;
 }
-MSH_CMD_EXPORT(lcd_spi_test, lcd_spi_test);
+MSH_CMD_EXPORT(lcd_spi_test, lcd will fill color => you need init lcd first);
 #endif
